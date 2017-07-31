@@ -3,7 +3,7 @@ file1='C:\study\\0008\\teacher.txt'
 file2='C:\study\\0008\course.txt'
 file3='C:\study\\0008\\teacher_course.txt'
 file4='C:\study\\0008\put.txt'
-with open(file1) as f1,open (file2) as f2,open(file3) as f3:
+with open(file1) as f1,open (file2) as f2,open(file3) as f3,open(file4,'w') as f4:
     teacher=f1.read().decode('utf-8').splitlines()[1:]#从文件1的第二行开始读取
     course=f2.read().decode('utf-8').splitlines()[1:]
     course_teacher=f3.read().decode('utf-8').splitlines()[1:]
@@ -26,7 +26,7 @@ with open(file1) as f1,open (file2) as f2,open(file3) as f3:
         coursedict[courseid]=coursename
     #print coursedict
 
-with open(file4,'w') as f4:
+
     for tea_cor in course_teacher:
         if not  tea_cor.strip():
           continue
